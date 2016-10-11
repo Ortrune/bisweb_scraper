@@ -26,7 +26,7 @@ def bisweb_batch(df, bbl='bbl'):
         try:
             return soup.findAll(text=re.compile('BIN#'), limit=1)[0].encode('utf-8')[8:15]
 
-        # in the event that the BISweb site took too long to load, recursively query it again
+        # in the event that the BIS Web site took too long to load, recursively query it again
         except:
             return get_bin(df)
 
